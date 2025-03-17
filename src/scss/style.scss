@@ -1,0 +1,19 @@
+@use 'libs/bootstrap-reboot.min';
+
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/animations';
+
+@use 'blocks/main';
+@use 'blocks/promo';
+@use 'blocks/titles';
+@use 'blocks/buttons';
+@use 'blocks/sidepanel';
+@use 'blocks/menu';
+@use 'blocks/about-me';
+@use 'blocks/resume';
+@use 'blocks/tools';
+@use 'blocks/portfolio';
+@use 'blocks/contacts';
+
+@use 'base/media';

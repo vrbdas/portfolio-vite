@@ -1,0 +1,84 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.tools {
+    padding-top: 120px;
+    &__wrapper {
+        display: grid;
+        grid-template: auto / repeat(auto-fit, minmax(220px, 1fr));
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 60px;
+        .tool {
+            border: 1px solid #000000;
+            padding: 25px;
+            display: grid;
+            grid-template: auto auto 1fr / auto;
+            align-items: start;
+            gap: 10px;
+            &__image {
+                img {
+                    width: 65px;
+                    height: 65px;
+                }
+            }
+            &__title {
+                width: fit-content;
+            }
+            &__descr {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+.progress {
+    display: grid;
+    grid-template: auto/repeat(auto-fit, 350px);
+    grid-auto-rows: 1fr;
+    justify-content: center;
+    gap: 30px 45px;
+    &__item {
+        min-height: 70px;
+        display: grid;
+        grid-template: repeat(2,1fr)/1fr auto;
+        column-gap: 30px;
+    }
+    &__title {
+        padding-left: 14px;
+        grid-area: 1/1/2/2;
+        position: relative;
+        @include mixins.before_circle;
+        &:before {
+            top: -20%;
+        }
+    }
+    &__counter {
+        align-self: start;
+        grid-area: 1/2/2/3;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: right;
+        color: #000000;
+    }
+    &__bar {
+        grid-area: 2/1/3/3;
+        align-self: end;
+        position: relative;
+        width: 100%;
+        height: 14px;
+        background: #E8E4DE;
+        border-radius: 4px;
+        &_fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: variables.$main-color;
+            border-radius: 4px;
+            height: 14px;
+            z-index: 1;
+        }
+    }
+}
